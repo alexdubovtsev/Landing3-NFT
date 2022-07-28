@@ -80,7 +80,6 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #fff;
   font-weight: 300;
-  background: url(../img/background-blur1.png) 0 0/cover no-repeat, #202128;
 }
 @media (max-width: 767px) {
   body {
@@ -102,6 +101,7 @@ body._lock {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+  background: url(../img/background-blur1.png) -100px -700px/cover no-repeat, url(../img/background-blur4.png) 0 bottom/cover no-repeat, #202128;
 }
 
 .container {
@@ -284,16 +284,6 @@ body._lock {
 .what {
   position: relative;
   padding: 100px 0 170px;
-}
-.what:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/background-blur2.png) 0 0/cover no-repeat;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 .what__title {
   font-weight: 600;
@@ -571,17 +561,7 @@ body._lock {
 
 .skills {
   position: relative;
-  padding: 100px 0px 170px;
-}
-.skills::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(../img/background-blur3.png) 0 0/cover no-repeat;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  padding: 60px 0px 20px;
 }
 .skills__row {
   display: flex;
@@ -694,4 +674,37 @@ body._lock {
     gap: 25px;
     margin-bottom: 40px;
   }
+}
+
+.bonus {
+  padding: 100px 0 60px;
+}
+.bonus__row {
+  display: flex;
+}
+.bonus__column {
+  flex: 0 1 33.333%;
+  display: flex;
+  flex-direction: column;
+}
+.bonus__img {
+  position: relative;
+  margin-bottom: 20px;
+  flex: 0 1 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bonus__img img {
+  max-width: 100%;
+  display: block;
+}
+.bonus__text {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.features {
+  position: relative;
+  padding: 0px 0 20px;
 }

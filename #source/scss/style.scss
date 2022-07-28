@@ -27,7 +27,7 @@ body {
 	@include adaptive-font($fontSize, calc($fontSize * .65));
 	color: $color-1;
 	font-weight: 300;
-	background: url(../img/background-blur1.png) 0 0 / cover no-repeat, #202128;
+	
 	&._lock {
 		overflow: hidden;
 	}
@@ -39,6 +39,8 @@ body {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	background: url(../img/background-blur1.png) -100px -700px /cover no-repeat, url(../img/background-blur4.png) 0 bottom /cover no-repeat, #202128;
+
 }
 
 .container {
@@ -226,16 +228,7 @@ body {
 .what {
 	position: relative;
 	padding: 100px 0 170px;
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: url(../img/background-blur2.png) 0 0 / cover no-repeat;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
+	// background: url(../img/background-blur2.png) 0 bottom /cover no-repeat;
 	&__title {
 		@include adaptive-font(48,24);
 		font-weight: 600;
@@ -434,17 +427,8 @@ body {
 
 .skills {
 	position: relative;
-	padding: 100px 0px 170px;
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: url(../img/background-blur3.png) 0 0 / cover no-repeat;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
+	padding: 60px 0px 20px;
+	// background: url(../img/background-blur3.png) 0 -1200px /cover no-repeat;
 	&__row {
 		display: flex;
 		align-items: center;
@@ -513,4 +497,62 @@ body {
 		}
 	}
 }
+
+
+.bonus {
+	padding: 100px 0 60px;
+	&__title {
+	}
+	&__row {
+		display: flex;
+	}
+	&__column {
+		flex: 0 1 33.333%;
+		display: flex;
+		flex-direction: column;
+	}
+	&__img {
+		position: relative;
+		margin-bottom: 20px;
+		flex: 0 1 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__img img {
+		max-width: 100%;
+		display: block;
+	}
+	&__text {
+		flex: 1 1 auto;
+		text-align: center;
+	}
+}
+
+
+.features {
+	position: relative;
+	padding: 0px 0 20px;
+	&__title {
+	}
+	&__row {
+	}
+	&__column {
+	}
+	&__subtitle {
+	}
+	&__text {
+	}
+	&__columm {
+	}
+	&__sales {
+	}
+	&__form {
+	}
+	&__email {
+	}
+	&__acces {
+	}
+}
+
 
