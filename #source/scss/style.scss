@@ -64,6 +64,9 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@media (min-width:1730px) {
+			max-width: $maxWidthContainer + 350px;
+		}	
 	}
 	&__logo {
 		position: relative;
@@ -207,14 +210,14 @@ body {
 
 
 .btn {
-	@include adaptive-value("padding-left", 110, 20, 0);
-	@include adaptive-value("padding-right", 110, 20, 0);
-	@include adaptive-value("padding-top", 30, 15, 0);
-	@include adaptive-value("padding-bottom", 30, 15, 0);
+	@include adaptive-value("padding-left", 110, 15, 0);
+	@include adaptive-value("padding-right", 110, 15, 0);
+	@include adaptive-value("padding-top", 30, 12, 0);
+	@include adaptive-value("padding-bottom", 30, 12, 0);
 	color: $color-1;
 	border: 2px solid #fff;
 	border-radius: 60px;
-	@include adaptive-font(24,16);
+	@include adaptive-font(24,14);
 	line-height: 1.4;
 	box-shadow: 0 0 55px rgba($color: #fff, $alpha: .2), inset 0 0 75px rgba($color: #fff, $alpha: .1);
 	
@@ -411,12 +414,16 @@ body {
 }
 
 .sales-white {
+	position: absolute;
 	background: #fff;
 	color: #000;
 	transform: rotate(-6.3deg) translate(0, -100px);
 	z-index: 1;
 	@media (min-width: 767px) {
-		transform: rotate(-4.5deg) translate(-50px, -100px);
+		transform: rotate(-4.5deg) translate(0px, -100px);
+	}
+	@media (min-width: #{$maxWidthContainer + px}) {
+		transform: rotate(-2.5deg) translate(0px, -100px);
 	}
 }
 .sales-white .sales__price span:before {
@@ -427,7 +434,8 @@ body {
 
 .skills {
 	position: relative;
-	&::after {
+	padding: 100px 0px 170px;
+	&::before {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -440,21 +448,69 @@ body {
 	&__row {
 		display: flex;
 		align-items: center;
+		margin-bottom: 50px;
+		&:last-child {
+			margin-bottom: 0px;}
+		&:nth-child(even) {
+			flex-direction: row-reverse;}
+		@media (max-width: 992px) {
+			margin-bottom: 0;
+		}
+		@media (max-width: 767px) {
+			margin-bottom: 30px;
+			flex-direction: column;
+			&:last-child {
+				margin-bottom: 0px;}
+			&:nth-child(even) {
+				flex-direction: column;}
+		}	
 	}
-	&__row:nth-child(even) {
-		flex-direction: row-reverse;
-	}
+	
+
 	&__img {
+		flex: 0 1 500px;
+		min-width: 300px;
+		@media (max-width: 767px) {
+			flex: 0 1 320px;
+		}
 	}
+	&__img img {
+		max-width: 100%;
+		display: block;
+		height: auto;
+}
 	&__body {
+		flex: 1 1 auto;
+		padding: 0 15px;
+		@media (max-width: 767px) {text-align: center;}
 	}
 	&__title {
+		@include adaptive-font(40,16);
+		line-height: 1.2;
+		max-width: 535px;
+		margin-bottom: 35px;
+		font-weight: 600;
 	}
 	&__text {
-	}
-	&__btn {
+		@include adaptive-font(32,18);
+		line-height: 1.2;
+		font-weight: 400;
+		margin-bottom: 62px;
+		@media (max-width: 767px) {margin-bottom: 35px;}
 	}
 	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(200px, 500px));
+		gap: 40px 15px;
+		grid-auto-rows: auto;
+		margin-bottom: 70px;
+		@include adaptive-font(32,16);
+		@media (max-width: 767px) {
+			display: flex;
+			flex-direction: column;
+			gap: 25px;
+			margin-bottom: 40px;
+		}
 	}
 }
 
