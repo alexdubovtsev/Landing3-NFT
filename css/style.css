@@ -679,6 +679,20 @@ body._lock {
 .bonus {
   padding: 100px 0 60px;
 }
+.bonus__title {
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .bonus__title {
+    font-size: calc(18px + 37.4 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .bonus__title {
+    font-size: calc(18px + 22 * (100vw / 1730));
+  }
+}
 .bonus__row {
   display: flex;
 }
@@ -702,9 +716,196 @@ body._lock {
 .bonus__text {
   flex: 1 1 auto;
   text-align: center;
+  line-height: 1.3;
+}
+@media (max-width: 767px) {
+  .bonus__text {
+    font-size: calc(14px + 10.2 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .bonus__text {
+    font-size: calc(14px + 6 * (100vw / 1730));
+  }
 }
 
 .features {
   position: relative;
-  padding: 0px 0 20px;
+  padding: 10px 0 80px;
+}
+.features__title {
+  line-height: 1.4;
+  font-weight: 600;
+  width: 489px;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .features__title {
+    font-size: calc(18px + 37.4 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__title {
+    font-size: calc(18px + 22 * (100vw / 1730));
+  }
+}
+.features__row {
+  display: flex;
+  margin: 0 -10px;
+}
+.features__column {
+  flex: 0 0 50%;
+  padding: 0 10px;
+}
+.features__subtitle {
+  line-height: 1.4;
+  margin-bottom: 15px;
+  padding-right: 35px;
+}
+@media (max-width: 767px) {
+  .features__subtitle {
+    font-size: calc(16px + 27.2 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__subtitle {
+    font-size: calc(16px + 16 * (100vw / 1730));
+  }
+}
+.features__text {
+  line-height: 1.3;
+}
+@media (max-width: 767px) {
+  .features__text {
+    font-size: calc(14px + 10.2 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__text {
+    font-size: calc(14px + 6 * (100vw / 1730));
+  }
+}
+.features__text p {
+  margin-bottom: 35px;
+  padding-right: 80px;
+}
+.features__text p:last-child {
+  margin-bottom: 0;
+}
+.features__sales {
+  display: grid;
+  grid-template: 1fr 1fr/1fr;
+  gap: 15px 0px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .features__sales .sales__pct {
+    font-size: calc(20px + 20.4 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__sales .sales__pct {
+    font-size: calc(20px + 12 * (100vw / 1730));
+  }
+}
+.features__sales .sales__text {
+  justify-content: center;
+  grid-column: 1/3;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .features__sales .sales__text {
+    font-size: calc(14px + 10.2 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__sales .sales__text {
+    font-size: calc(14px + 6 * (100vw / 1730));
+  }
+}
+.features__sales .sales__text p {
+  margin-bottom: 0;
+  padding: 0;
+}
+.features__sales .sales__price {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+@media (max-width: 767px) {
+  .features__sales .sales__price {
+    font-size: calc(20px + 20.4 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__sales .sales__price {
+    font-size: calc(20px + 12 * (100vw / 1730));
+  }
+}
+.features__sales .sales__price span {
+  font-weight: 400;
+  margin-left: 35px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .features__sales .sales__price span {
+    font-size: calc(16px + 15.3 * ((100vw - 320px) / 1730));
+  }
+}
+@media (min-width: 767px) {
+  .features__sales .sales__price span {
+    font-size: calc(16px + 9 * (100vw / 1730));
+  }
+}
+.features__sales .sales__price span:before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 1.5px;
+  background: rgba(255, 255, 255, 0.85);
+  bottom: 50%;
+  left: 0;
+  transform: rotate(-20deg) translate(0, -50%);
+}
+.features__form {
+  text-align: center;
+}
+.features__email {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background: none;
+  padding: 0 25px;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 60px;
+  width: 100%;
+  height: 74px;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.features__email::-moz-placeholder {
+  text-align: center;
+  color: #9C9C9C;
+}
+.features__email:-ms-input-placeholder {
+  text-align: center;
+  color: #9C9C9C;
+}
+.features__email::placeholder {
+  text-align: center;
+  color: #9C9C9C;
+}
+.features__access {
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 60px;
+  width: 100%;
+  height: 74px;
+  font-size: 20px;
+  line-height: 74px;
 }
