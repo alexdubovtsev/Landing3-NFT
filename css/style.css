@@ -137,6 +137,10 @@ body._lock {
   z-index: 5;
   width: calc(45px + 30 * ((100vw - 320px) / 1410));
   height: calc(33.6px + 22.4 * ((100vw - 320px) / 1410));
+  transition: all 0.3s ease-in-out 0s;
+}
+.header__logo:hover {
+  transform: rotate(360deg) scale(1.05);
 }
 .header__logo img {
   max-width: 100%;
@@ -153,6 +157,11 @@ body._lock {
   color: #fff;
   line-height: 1.28;
   z-index: 5;
+  transform: scale(1);
+  transition: all 0.3s ease 0s;
+}
+.header__login:hover {
+  transform: scale(1.1);
 }
 @media (max-width: 767px) {
   .header__container {
@@ -206,13 +215,36 @@ body._lock {
 
 .menu__list li {
   margin-right: 40px;
+  transform: scale(1);
+  transition: all 0.3s ease 0s;
+}
+.menu__list li:hover {
+  transform: scale(1.1);
 }
 .menu__list li:last-child {
   margin-right: 0px;
 }
 .menu__link {
+  padding: 5px 0;
   color: #fff;
   line-height: 1.28;
+  position: relative;
+}
+.menu__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.3s ease 0.1s;
+  transform-origin: left bottom;
+}
+.menu__list li:hover .menu__link::after {
+  transform: scale(1);
+  transition: all 0.3s ease 0s;
 }
 @media (min-width: 767px) {
   .menu__list {
@@ -260,6 +292,7 @@ body._lock {
 }
 
 .btn {
+  display: inline-block;
   padding-left: calc(15px + 95 * ((100vw - 320px) / 1410));
   padding-right: calc(15px + 95 * ((100vw - 320px) / 1410));
   padding-top: calc(12px + 18 * ((100vw - 320px) / 1410));
@@ -269,6 +302,7 @@ body._lock {
   border-radius: 60px;
   line-height: 1.4;
   box-shadow: 0 0 55px rgba(255, 255, 255, 0.2), inset 0 0 75px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease 0s;
 }
 @media (max-width: 767px) {
   .btn {
@@ -279,6 +313,13 @@ body._lock {
   .btn {
     font-size: calc(14px + 10 * (100vw / 1730));
   }
+}
+.btn:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4), inset 0 0 75px rgba(255, 255, 255, 0.1);
+  transform: scaleX(0.95);
+}
+.btn:active {
+  transform: scale(0.95);
 }
 
 .what {
@@ -675,6 +716,9 @@ body._lock {
     margin-bottom: 40px;
   }
 }
+.skills__btn {
+  transition: all 0.3s ease 0s;
+}
 
 .bonus {
   padding: 100px 0 60px;
@@ -885,6 +929,7 @@ body._lock {
   font-size: 20px;
   line-height: 1.4;
   margin-bottom: 12px;
+  transition: all 0.3s ease 0s;
 }
 .features__email::-moz-placeholder {
   text-align: center;
@@ -898,6 +943,9 @@ body._lock {
   text-align: center;
   color: #9C9C9C;
 }
+.features__email:focus {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
 .features__access {
   display: block;
   margin: 0 auto;
@@ -908,4 +956,11 @@ body._lock {
   height: 74px;
   font-size: 20px;
   line-height: 74px;
+  transition: all 0.3s ease 0s;
+}
+.features__access:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+.features__access:active {
+  transform: scale(0.95);
 }
