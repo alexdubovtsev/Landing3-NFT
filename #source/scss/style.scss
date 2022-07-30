@@ -39,7 +39,7 @@ body {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	background: url(../img/background-blur1.png) -100px -700px /cover no-repeat, url(../img/background-blur4.png) 0 bottom /cover no-repeat, #202128;
+	background: url(../img/background-rows1.png) 0 0  no-repeat, url(../img/background-rows2.png) 0 bottom  no-repeat, url(../img/background-blur1.png) -100px -1400px /cover no-repeat, url(../img/background-blur4.png) 0 bottom /cover no-repeat, #202128;
 
 }
 
@@ -266,7 +266,45 @@ body {
 	
 }
 
+.row-1 {
+	display: flex;
+	&__body {
+		flex: 0 1 auto;
+	}
+	&__img {
+		align-items: center;
+		flex: 0 1 50%;
+		position: relative;
+
+		transform-style: preserve-3d;
+		transform: perspective(1000px);
+	}
+	&__img img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		&:first-child, &:last-child {
+			opacity: 0.2;
+			z-index: -1;
+			transform: translateZ(-70px);
+			top: 15px;
+		}
+		&:first-child  {
+			left: -30px;
+		}
+		&:last-child {
+			left: 40px;
+		}
+	}
+}
+
+
 .what {
+	align-items: center;
 	position: relative;
 	padding: 100px 0 170px;
 	// background: url(../img/background-blur2.png) 0 bottom /cover no-repeat;
@@ -286,16 +324,40 @@ body {
 		text-align: center;
 		line-height: 1.685;
 		font-weight: 600;
+		position: relative;
+		span {
+			text-transform: uppercase;
+			display: block;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			background: url(../img/what-arrow.png) 0 0 no-repeat;
+			// @include adaptive-value("width", 200,150,0);
+			// @include adaptive-value("height", 155,100,0);
+			width: 200px;
+			height: 155px;
+			left: 70%;
+			top: -5%;
+			// transform: scale(1) rotate(5deg) ;
+			animation: arrow 2s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite alternate;
+						@keyframes arrow {
+				0% {
+					transform: rotate(5deg);
+				}		
+				100% {
+					transform: translate(10px, 15px) rotate(15deg) scale(calc(0.5 + 0.5*(100vw - 320px) / ($maxWidthContainer - 320)));
+				}		
+			}
+		}
+
 	}
-	&__gift span {
-		text-transform: uppercase;
-		display: block;
-	}
+	
 	&__btn {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 100px;
+		margin-top: 50px;
 		margin-bottom: 87px;
 	}
 	&__row-2 {
