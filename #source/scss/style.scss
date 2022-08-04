@@ -225,6 +225,7 @@ body {
 			left: 0;
 			background: $color-3;
 			z-index: 2;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.671);			
 		}
 		&._active {
 			top: 0;
@@ -600,11 +601,11 @@ body {
 	
 
 	&__img {
-		flex: 0 1 500px;
-		min-width: 300px;
+		flex: 0 1 50%;
 		@media (max-width: 767px) {
 			margin-bottom: 30px;
-			flex: 0 1 320px;
+			// @include adaptive-value("max-width", 350, 200);
+			max-width: 350px;
 		}
 	}
 	&__img img {

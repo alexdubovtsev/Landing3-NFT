@@ -284,6 +284,7 @@ body._lock {
     left: 0;
     background: #202128;
     z-index: 2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.671);
   }
   .menu._active {
     top: 0;
@@ -790,13 +791,12 @@ body._lock {
   }
 }
 .skills__img {
-  flex: 0 1 500px;
-  min-width: 300px;
+  flex: 0 1 50%;
 }
 @media (max-width: 767px) {
   .skills__img {
     margin-bottom: 30px;
-    flex: 0 1 320px;
+    max-width: 350px;
   }
 }
 .skills__img img {
